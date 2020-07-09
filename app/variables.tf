@@ -10,5 +10,8 @@ variable "iam_role" {
   type = string
 }
 
+variable "env" {
+  type = string
+}
 
 

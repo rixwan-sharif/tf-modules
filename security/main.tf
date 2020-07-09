@@ -7,7 +7,7 @@ provider "aws" {
 }
 
 resource "aws_iam_role" "ec2_role" {
-  name = var.ec2_role_name
+  name = "${var.env}-${var.ec2_role_name}"
 
   assume_role_policy = <<EOF
 {
@@ -47,6 +47,6 @@ EOF
 }
 
 resource "aws_iam_instance_profile" "ec2_instance_profile" {
-  name = "ec2_instance_profile"
+  name = "${var.env}-ec2_instance_profile"
   role = "${aws_iam_role.ec2_role.name}"
 }

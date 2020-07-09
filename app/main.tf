@@ -13,6 +13,10 @@ resource "aws_instance" "ec2" {
   key_name             = "inovalon-devops-kp"
   iam_instance_profile = var.iam_role
   instance_type        = var.instance_type
+  
+  tags                 = {
+  	Name        = "${var.env}-ec2"
+  }
 }
 
 
