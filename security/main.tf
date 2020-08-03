@@ -1,10 +1,4 @@
-terraform {
-  backend "s3" {}
-}
 
-provider "aws" {
-  region = "us-east-1"
-}
 
 resource "aws_iam_role" "ec2_role" {
   name = "${var.env}-${var.ec2_role_name}"
